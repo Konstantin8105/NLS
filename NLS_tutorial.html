@@ -1,0 +1,699 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/main_template.dwt" codeOutsideHTMLIsLocked="false" -->
+
+<!-- Mirrored from paulino.ce.gatech.edu/NLS_tutorial.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Mar 2021 13:16:12 GMT -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>NLS++ Code and Tutorial</title>
+<!-- InstanceEndEditable -->
+<style type="text/css">
+<!--
+#page {
+	background-color: #FFF;
+	width: 800px;
+	position: relative;
+	margin-top: 0;
+	margin-right: auto;
+	margin-left: auto;
+}
+body {
+	background-color: #AAA;
+	text-align: center;
+}
+#spacer {
+	height: 5px;
+}
+#header {
+	height: 100px;
+	width: 790px;
+	margin: 0px 5px 5px 5px;
+	background-color: #023d7b;
+}
+#Logo {
+	height: 75px;
+	width: 135px;
+	float: left;
+	text-align: center;
+	padding-top: 23px;
+	padding-left: 8px;
+}
+#HeaderImage {
+	height: 100px;
+	width: 130px;
+	float: left;
+	text-align: right;
+}
+#page #header #HeaderImage img {
+	padding: 0px;
+	margin-top: -9px;
+}
+#HeaderText {
+	float: left;
+	width: 507px;
+	height: 100px;
+	text-align: left;
+	padding-left: 10px;
+}
+#Prof {
+	height: 30px;
+	padding-top: 20px;
+}
+#ghp {
+	height: 50px;
+	padding-left: 3px;
+}
+#footer {
+	background-color: #023d7b;
+	height: 20px;
+	color: #FFF;
+	text-align: center;
+	padding-top: 5px;
+	font-size: 10px;
+	margin: 5px 5px 5px 5px;
+	width: 790px;
+	font-family: Verdana, Geneva, sans-serif;
+}
+#content {
+	text-align: left;
+}
+#MainContent {
+	width: 790px;
+	background-color: #FFF;
+	margin: 5px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 11px;
+}
+#PageTitle {
+	text-align: left;
+	height: 20px;
+	border-bottom-style: solid;
+	border-bottom-color: #6A8AA4;
+	margin: 5px;
+	border-bottom-width: thin;
+	width: 790px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	padding-top: 10px;
+	color: #000;
+}
+a:active {
+	text-decoration: none;
+}
+#menu {
+	height: 30px;
+	margin: 5px;
+}
+#page #footer a:hover {
+	color: #FFF;
+}
+-->
+</style>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+<!--
+#NLS_Intro {
+	padding: 5px;
+}
+.larger_font {
+	font-size: 12px;
+}
+.subsection {
+	padding: 5px;
+}
+.subsection a:link {
+	color: #000;
+	text-decoration: underline;
+	font-weight: bold;
+}
+.subsection a:visited {
+	color: #000;
+	text-decoration: underline;
+	font-weight: bold;
+}
+.subsection a:hover {
+	color: #3C65B0;
+	text-decoration: underline;
+	font-weight: bold;
+}
+#lee_wrapper {
+	height: 360px;
+}
+#lee_left {
+	float: left;
+	margin-left: 20px;
+}
+#lee_right {
+	float: right;
+	text-align: center;
+	width: 400px;
+	margin-right: 20px;
+}
+#vmt_left {
+	float: left;
+	padding: 100px 0px 0px 0px;
+	width: 300px;
+}
+#vmt_right {
+	float: right;
+	text-align: center;
+	width: 450px;
+}
+#vmt_wrapper {
+	height: 370px;
+}
+.capion {
+	text-align: center;
+}
+.Heading {
+	padding: 5px 5px 0px 5px;
+	border-bottom-width: thin;
+	border-bottom-style: solid;
+	border-bottom-color: #3C4040;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+.download_left {
+	float: left;
+	width: 300px;
+	padding: 5px;
+}
+.download_wrapper {
+	height: 270px;
+}
+.download_right {
+	float: right;
+	width: 440px;
+	padding: 5px;
+}
+.examples_content {
+	height: 640px;
+}
+#functions_wrapper {
+	height: 400px;
+}
+#functions_right {
+	float: right;
+	width: 380px;
+}
+#functions_left {
+	float: left;
+	width: 380px;
+}
+#vmt_p_wrapper {
+	height: 510px;
+}
+#vmt_p_right {
+	float: right;
+}
+#vmt_p_left {
+	float: left;
+	width: 200px;
+	padding: 50px 0px 0px 0px;
+}
+#class_organization {
+	height: 680px;
+}
+.input_file_wrapper {
+	height: 330px;
+}
+.input_file_content {
+	height: 550px;
+}
+#alg_file_left {
+	float: left;
+	width: 440px;
+	padding: 5px;
+}
+#alg_file_right {
+	float: right;
+	width: 315px;
+	text-align: center;
+	padding-top: 30px;
+}
+#class_org_text {
+	float: left;
+	width: 290px;
+	padding: 5px;
+}
+#class_org_fig {
+	float: right;
+	width: 470px;
+	text-align: center;
+	padding: 5px;
+}
+.table_underline table tr td {
+	border-bottom-width: thin;
+	border-bottom-style: solid;
+	border-bottom-color: #666;
+	padding: 2px 0px 2px 0px;
+}
+.additional_figures {
+	text-align: center;
+}
+.centered {
+	text-align: center;
+}
+
+-->
+</style>
+<script src="NLS/SpryAssets/SpryTabbedPanels_NLS.js" type="text/javascript"></script>
+<link href="NLS/SpryAssets/SpryTabbedPanels_NLS.css" rel="stylesheet" type="text/css" />
+<!-- InstanceEndEditable -->
+<link href="main_styles.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+<link rel="shortcut icon" href="Images/header/favicon.png" type="image/x-icon" />
+</head>
+
+<body onload="MM_preloadImages('Menu/home_1.gif','Menu/bio_1.gif','Menu/publications_1.gif','Menu/research_1.gif','Menu/courses_1.gif','Menu/workshops_1.gif','Menu/people_1.gif','Menu/links_1.gif','Menu/contact_1.gif')">
+<div id="page">
+<div id="spacer">
+</div>
+  <div id="header">
+    <div id="Logo"><img src="Images/header/GA.png" width="125" height="59" border="0" usemap="#Map" />
+      <map name="Map" id="Map">
+        <area shape="rect" coords="2,3,119,58" href="http://www.gatech.edu/" target="_blank" alt="UIUC Homepage" />
+      </map>
+    </div>
+    <div id="HeaderText">
+	  <div id="Prof"><img src="Images/header/DBW_prof.png" width="500" height="23" /></div>
+   	  <div id="ghp"><img src="Images/header/title_img02_2.png" width="398" height="30" /></div>
+    </div>
+    <div id="HeaderImage"><img src="Images/header/title_img03.png" width="130" height="109" /></div>
+  </div>
+  <div id="menu"> 
+<!-- Begin of MTop web button menu code -->
+<div id="mtop"></div>
+<script language="javascript" src="menu/mtop.js"></script>
+<script language="javascript">draw_buttons("menu","mtop",-1);</script>
+  <noscript>
+  <a href="index.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('HomeButton','','menu/home_1-2.gif',1)"><img src="menu/home_0.gif" name="HomeButton" width="66" height="26" border="0" id="HomeButton" /></a>
+  <a href="bio.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('BioButton','','menu/bio_1-2.gif',1)"><img src="menu/bio_0.gif" name="BioButton" width="60" height="26" border="0" id="BioButton" /></a>
+  <a href="research.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('ResearchButton','','menu/research_1-2.gif',1)"><img src="menu/research_0.gif" name="ResearchButton" width="85" height="26" border="0" id="ResearchButton" /></a>
+  <a href="publications.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('PubButton','','menu/publications_1-2.gif',1)"><img src="menu/publications_0.gif" name="PubButton" width="105" height="26" border="0" id="PubButton" /></a>
+  <a href="theses.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('ThesesButton','','menu/theses_1.gif',1)"><img src="menu/theses_0.gif" name="PubButton" width="75" height="26" border="0" id="PubButton" /></a>
+  <a href="courses.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('CoursesButton','','menu/courses_1-2.gif',1)"><img src="menu/courses_0.gif" name="CoursesButton" width="75" height="26" border="0" id="CoursesButton" /></a>
+  <a href="workshops.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('WorkshopsButton','','menu/workshops_1-2.gif',1)"><img src="menu/workshops_0.gif" name="WorkshopsButton" width="85" height="26" border="0" id="WorkshopsButton" /></a>
+  <a href="group.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('PeopleButton','','menu/people_1-2.gif',1)"><img src="menu/people_0.gif" name="PeopleButton" width="80" height="26" border="0" id="PeopleButton" /></a>
+  <a href="links.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('LinksButton','','menu/links_1-2.gif',1)"><img src="menu/links_0.gif" name="LinksButton" width="70" height="26" border="0" id="LinksButton" /></a>
+  <a href="contact.html" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('ContactButton','','menu/contact_1-2.gif',1)"><img src="menu/contact_0.gif" name="ContactButton" width="85" height="26" border="0" id="ContactButton" /></a>
+  </noscript>
+<!-- End of MTop web button menu code -->
+
+</div>
+  <div id="content">
+<div id="PageTitle"><!-- InstanceBeginEditable name="PageTitle" --><span class="PageTitle">NLS++ Code and Tutorial</span><!-- InstanceEndEditable --></div>
+<div id="MainContent">  <!-- InstanceBeginEditable name="MainContent" -->
+<div class="larger_font">
+  <div class="box_level1" id="NLS_Intro">
+    
+    <p>Welcome to the web-based tutorial on the NLS++ code, based on the Applied Mechanics Reviews journal paper:<br />
+      <br />
+      Leon, S. E., 
+      Paulino, G. H., Pereira, A., Menezes, I. F. M., Lages, E. N. &quot;A Unified Library of Nonlinear Solution Schemes.&quot; <em>Applied Mechanics Reviews</em>. Accepted. <br />
+      <a href="journal_papers/2011/AMR_11_AUnifiedLibrary.pdf">Link to PDF</a><br />
+      <br />
+      Jump to section:</p>
+    <ul>
+      <li><a href="#download">Download C++ NLS++ code</a></li>
+      <li><a href="#organization">NLS++ Organization</a>
+        <ul>
+          <li><a href="#oo_design">Object-oriented design philosophy</a></li>
+          <li><a href="#class_structure">Class organization</a></li>
+          <li><a href="#input_files">Input file formats</a></li>
+        </ul>
+      </li>
+      <li><a href="#compile">Instructions to compile and run NLS++</a> </li>
+      <li><a href="#examples">Example problems</a> </li>
+      <li><a href="#plotting">Plotting results</a></li>
+      <li><a href="#summary">Summary
+      </a></li>
+    </ul>
+    </div>
+  
+  <div class="DivHeading Heading box_level2"><a name="download" id="download"></a>Download C++ NLS++ code</div>
+  <div class="subsection">
+    <div class="download_wrapper">
+      <div class="download_left">
+        <p>NLS++ files are available for download. Included in the download is a README file detailing the compilation and linking steps. Download the compressed format of your choice and extract files. </p>
+          <p><a href="NLS/Codes/NLS_Code.zip">NLS_Code.zip</a><br />
+            <br />
+            <a href="NLS/Codes/NLS_Code.tar">NLS_Code.tar </a><br />
+            </p>
+        <p>The directory structure is shown to the right. The bin, obj, and lib directories are created after compiling the project.</p>
+        </div>
+      <div class="download_right"><img src="NLS/Media/directory_stand_alone.png" width="430" height="255" alt="Directory structure" /></div></div></div>
+  
+  <div class="DivHeading Heading box_level2"><a name="organization" id="organization"></a>NLS++ Organization</div>
+  <div class="subsection">
+    <p><a name="oo_design" id="oo_design"></a><strong>Object-oriented design philosophy</strong></p>
+    <p>The unified approach to nonlinear solution schemes for the finite element method lends itself
+well to an object-oriented implementation. This is due in part to the fact that the
+incremental-iterative process is generalized in such a way that many nonlinear solution
+schemes can be formulated into the N+1 dimensional space.
+</p>
+<p><a name="class_organization" id="class_organization"></a><strong>Class organization</strong></p>
+     <p>The NLS++ code is organized into three distinct components: Model, Control, and Linear Solver. A separate application<br />
+       class creates instances of these components to execute the nonlinear analysis. The class hierarchy of NLS++ was designed in such way that the code would be executed by a simple application class, requiring minimal work from the end user.</p>
+     <p>Model classes:
+       The model classes represent the finite element model of the system to be solved by computing and storing 
+       information associated with the system, including the tangent matrix, and internal and external load vectors.       The base class/derived class paradigm is used to interface with the authors’ applications.</p>
+     <p>Linear solver class:
+       The purpose of the linear solver class is simply to solve the linear system, i.e. <strong>Ax</strong>= <strong>b</strong>. Currently a simple direct solver (Crout solver) is implemented. The LinearSystem is extensible to accommodate different storage schemes (e.g. band, profile, sparse, etc.) and different numerical strategies (e.g. direct or iterative) for solving the system of equations.</p>
+     <p>Control classes:
+      The Control class is the engine of the NLS++ code, in
+the sense that it is responsible for tracing the equilibrium path
+by means of the incremental-iterative procedure. Classes can
+be derived from the Control class to obtain the various nonlinear
+solution schemes. The derived
+class has one particular function that is not implemented in
+the parent class, called Lambda, which computes the load
+factor for each nonlinear scheme.      </p>
+     <p>The NLS++ code is shown below in the form of a UML (<a href="http://www.uml.org/" target="_blank">Unified Modeling Language</a>) diagram: <br />
+      <div class="centered"> <img src="NLS/Media/nls_uml.png" width="770" height="465" /><br />
+        <br />
+        UML Diagram of NLS++</div>
+
+    </p>
+     <p><a name="input_files" id="input_files"></a><strong>Input file formats</strong></p>
+    <p>That application
+class of the NLS++ client requires two input files:
+a model file and an algorithm file. A finite element model
+file, for example, contains the element type, finite element
+mesh (i.e. nodes, elements, connectivity), boundary conditions,
+applied loads and displacements, and material properties.
+The algorithm file contains the type of nonlinear solution
+scheme, initial control factor, additional algorithm inputs
+if necessary, maximum number of steps and iterations,
+convergence tolerance, and type of linear solver.</p>
+    <div id="TabbedPanels2" class="TabbedPanels">
+      <ul class="TabbedPanelsTabGroup">
+        <li class="TabbedPanelsTab" tabindex="0">Algorithm File</li>
+        <li class="TabbedPanelsTab" tabindex="0">Model File 1 - Space Truss (Elastic)</li>
+        <li class="TabbedPanelsTab" tabindex="0">Model File 2 - Space Truss (Elasto-plastic)</li>
+<li class="TabbedPanelsTab" tabindex="0">Model File 3 - Plane Frame</li>
+      </ul>
+      <div class="TabbedPanelsContentGroup">
+        <div class="TabbedPanelsContent input_file_content">    
+        <div class="input_file_wrapper">
+        <div id="alg_file_left">
+          <p><strong>Algorithm file structure:</strong></p>
+          <p>Line 1: arg1<br />
+            Line 2: arg2 arg3 arg4 arg5 arg6          <br />
+            Line 3: arg7 arg8 arg9          </p>
+          <p><strong>Algorithm file arguments:</strong></p>
+<table width="440" border="0">
+  <tr>
+    <td width="50">arg1 -</td>
+    <td>Linear solver type (Crout = 0)</td>
+  </tr>
+  <tr>
+    <td>arg2 -</td>
+    <td>Algorithm type</td>
+  </tr>
+  <tr>
+    <td>arg3 -</td>
+    <td>Stiffness matrix update type (0 = standard, 1 = modified)</td>
+  </tr>
+  <tr>
+    <td>arg4 -</td>
+    <td>Initial load factor</td>
+  </tr>
+  <tr>
+    <td>arg5 -</td>
+    <td>Algorithm parameter 1</td>
+  </tr>
+  <tr>
+    <td>arg6 -</td>
+    <td>Algorithm parameter 2</td>
+  </tr>
+  <tr>
+    <td>arg7 -</td>
+    <td>Maximum number of steps</td>
+  </tr>
+  <tr>
+    <td>arg8 -</td>
+    <td>Maximum number of iterations per step</td>
+  </tr>
+  <tr>
+    <td>arg9 -</td>
+    <td>Tolerance for convergence</td>
+  </tr>
+</table>
+        
+        </div>
+        <div id="alg_file_right">
+        alg_disp.inp - Sample algorithm input file using the Displacement Control Method:
+          <p><img src="NLS/Media/input_file.png" width="300" height="204" alt="Sample input file" /></p>
+        </div>
+        </div>
+        <p><strong>Summary of algorithm input parameters:        </strong></p>
+        <div class="table_underline"><table width="770" border="0">
+          <tr>
+              <td><strong>Name</strong></td>
+              <td><strong>Algorithm Type</strong></td>
+              <td><strong>Algorithm Parameter 1</strong></td>
+              <td><strong>Algorithm Parameter 2</strong></td>
+              </tr>
+            <tr>
+              <td>Load Control </td>
+              <td><div align="center">0</div></td>
+              <td>none</td>
+              <td>none</td>
+              </tr>
+            <tr>
+              <td>Displacement Control </td>
+              <td><div align="center">1</div></td>
+              <td>D.O.F. of controlled equation</td>
+              <td>Type (0 = constant, 1 = variable)</td>
+              </tr>
+            <tr>
+              <td>Arc Length Control</td>
+              <td><div align="center">2</div></td>
+              <td>Type (0 = constant, 1 = variable)</td>
+              <td>none</td>
+              </tr>
+            <tr>
+              <td>Work Control</td>
+              <td><div align="center">3</div></td>
+              <td>none</td>
+              <td>none</td>
+              </tr>
+            <tr>
+              <td>Generalized Disp. Control</td>
+              <td><div align="center">4</div></td>
+              <td>none</td>
+              <td>none</td>
+              </tr>
+            <tr>
+              <td>Orthogonal Residual </td>
+              <td><div align="center">5</div></td>
+              <td>Initial incremental scale factor</td>
+              <td>none</td>
+              </tr>
+          </table></div>
+        </div>
+        <div class="TabbedPanelsContent input_file_content">The file format for space truss
+        is shown below using the elastic von Mises truss example:<br />
+        <br />
+        <img src="NLS/Media/input_space_truss.png" width="760" height="429" /> </div>
+        <div class="TabbedPanelsContent input_file_content">The file format for space truss
+        is shown below using the elasto-plastic von Mises truss example:<br />
+        <br />
+        <img src="NLS/Media/input_space_truss_p.png" width="760" height="429" />
+         </div>
+ 	<div class="TabbedPanelsContent input_file_content">
+        The file format for the plane frame is shown below using a Lee frame example:<br />
+        <br />
+        <img src="NLS/Media/input_plane_frame.png" width="760" height="388" />
+	</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="DivHeading Heading box_level2"><a name="compile" id="compile"></a>Instructions to run NLS++ in Visual Studio</div>
+  <div class="subsection">
+    <p>The instructions below explain how to run NLS++ in Visual Studio and run the code.</p>
+    <p>1. Open the tnls.vcproj file, which is located in tests/prj/vc7/. This opens a solution with two projects: tnls and nls. The source and header files for each project are already loaded. Set the build order such that nls is built first followed by tnls.</p>
+    <div class="centered"><img src="NLS/Media/VS_project_dependency.png" width="700" height="504" alt="Visual Studio screen shot of project build order" /></div>
+    <p>Note: The nls.prj file holds the source and header files for the NLS library. The tnls.prj is an application of nls.prj, meaning that it depends nls.prj and contains the executable main.cpp file. </p>
+    <p>2. Run NLS++ using either the command prompt or Visual Studio. </p>
+    <p>Note: Immediately after declaring variables, main.cpp reads the name of the input files. The input files must be in the working directory.</p>
+    <div class="centered"><img src="NLS/Media/main_get_arguments.png" width="607" height="444" alt="main.cpp read name of input files" /></div>
+    <p>To use the command prompt continue with step 2, otherwise to use Visual Studio skip to step 3(a).</p>
+    <p>Open a command prompt, navigate to your working directory and type &quot;tnls.exe&quot; followed by the model input filename and the algorithm filename.</p>
+    <div class="centered"><img src="NLS/Media/run_command_prompt.png" width="676" height="340" alt="command prompt" /></div>
+    <p>3(a). Right click on the tnls project, select Properties. In the Properties Pages dialogue box navigate to Debugging on the menu on the left hand side under Configuration Properties. Type the name of the input files in the Command Arguments box, starting with the model file then the algorithm file. Click Ok.</p>
+    <div class="centered"><img src="NLS/Media/VS_input_arguments.png" width="700" height="490" alt="input arguments in Visual Studio" /></div>
+    <p>3(b). Click the Run button on the Standard toolbar.</p>
+    <div class="centered"><img src="NLS/Media/VS_run.png" width="700" height="90" /></div>
+    <p>4. View results</p>
+    <div class="centered"><img src="NLS/Media/results.png" width="700" height="301" alt="results" /></div>
+  </div>
+  
+  
+  <div class="DivHeading Heading box_level2"><a name="examples" id="examples"></a>Example Problems</div>
+  <div class="subsection">
+     <p>The following examples are run using two input files: one algorithm file containing the input parameters for the specific nonlinear solution scheme adopted for the particular problem, and the model file which contains node list, connectivity, material, boundary conditions, and output requests. To read more about the input files see the <a href="#input_files">Input file formats</a> section. Plotting was performed used a <a href="#plotting">simple matlab code</a>.</p>
+     <div id="TabbedPanels3" class="TabbedPanels">
+       <ul class="TabbedPanelsTabGroup">
+         <li class="TabbedPanelsTab" tabindex="0">Functions</li>
+         <li class="TabbedPanelsTab" tabindex="0">Von Mises Truss</li>
+         <li class="TabbedPanelsTab" tabindex="0">Von Mises Truss (w/ plasticity)</li>
+         <li class="TabbedPanelsTab" tabindex="0">12 Bar Truss</li>
+         <li class="TabbedPanelsTab" tabindex="0">Lee Frame</li>
+       </ul>
+       <div class="TabbedPanelsContentGroup">
+         <div class="TabbedPanelsContent">
+         <div class="examples_content">
+           <p>Functions are readily implemented into NLS++ and serve as simple ways to test the nonlinear solution schemes. Two functions are show below:</p>
+           <div id = "functions_wrapper">
+             <div id = "functions_left"><img src="NLS/Media/function_1d.png" alt="" width="380" height="369" />
+               <div class="capion">1-D Function, all method except the Load Control Method captured the full behavior</div></div>
+           <div id = "functions_right"><img src="NLS/Media/function_2d.png" width="380" height="349" /><br />
+             <br />
+             <div class="capion">2-D Function, <span class="caption">markers indicate the last converged equilibrium point achieved by each method. </span></div></div>
+           </div>
+           <p><br />
+             <a href="NLS/Files/1D%20Function.zip">One-dimensional function files (zip format)</a><br />
+             <br />
+             <a href="NLS/Files/2D%20Function.zip">Two-dimensional function files (zip format)</a></p>
+         </div>
+         </div>
+         <div class="TabbedPanelsContent">
+         <div class="examples_content">
+           <p>The Von Mises Truss is a two-degree of freedom system consisting of two nonlinear prismatic bar (truss) elements loaded indirectly through a spring. Large displacements and rotations constitute the geometric nonlinearity, but the constitutive relation is the linear Hooke’s law, thus material nonlinearity is not considered. The behavior of this structure depends strongly on the stiffness of the spring, C, as snap-back behavior will only occur if it is below the critical value.</p>
+           <div id="vmt_wrapper">
+           <div id="vmt_left"><img src="NLS/Media/vmt_schematic.png" width="300" height="139" alt="Von Mises Truss schematic" /></div>
+             <div id="vmt_right">
+               <img src="NLS/Media/vmt_sb.png" width="426" height="318" alt="Von Mises Truss result" />
+               <br />
+               <div class="caption">von Mises Truss results with snap back, markers indicate the last converged equilibrium point achieved by each method. </div></div>
+             </div>
+           <p><a href="NLS/Files/VMT_withSnapBack.zip">Elastic VMT with snap-back files (zip format)</a><br />
+<br />
+<a href="NLS/Files/VMT_noSnapBack.zip">Elastic VMT without snap-back files (zip format)</a></p>
+         </div>
+         </div>
+         <div class="TabbedPanelsContent">
+         <div class="examples_content">
+         
+         <div id="vmt_p_wrapper">
+         <div id="vmt_p_left">
+           <p>The Von Mises Truss is a two-degree of freedom system consisting of two nonlinear prismatic bar (truss) elements loaded indirectly through a spring. Large displacements and rotations constitute the geometric nonlinearity, and material nonlinearity is considered by adopting an elastic, perfectly-plastic constitutive model. <br />
+             <br />
+             The spring stiffness and initial flow stress can be varied to achieve different different structural responses, as shown in the figure to the right.<br />
+             <br />
+             <a href="NLS/Analytical_vmt.pdf">Click here</a> for details on the derivation of the analytical solution.</p>
+</div>
+           <div id="vmt_p_right"><img src="NLS/Media/vmt_p.png" width="550" height="503" /></div>
+         </div>
+         <br />
+         <br />
+         <a href="NLS/Files/VMT_plasticity.zip">Elasto-plastic VMT files (zip format)</a></div>
+         </div>
+         
+         
+         <div class="TabbedPanelsContent">
+         <div class="examples_content">
+           <p>This example consists of a 12-bar truss structure which features highly nonlinear
+             behavior: the load changes direction eight times and the
+             structure experiences several very large changes in stiffness
+             through the load history. Geometric nonlinearity is considered, however the constitutive
+             relationship is linear, thus material nonlinearity is
+             not. Double symmetry
+             is considered and, therefore, the deformations of the
+             structure can be described by three displacement components
+             (u1, u2, and u3).
+             <br />
+           </p>
+           <div class="centered"><img src="NLS/Media/12bar_truss.png" width="663" height="450" /><br />
+             <br />
+             12 bart truss schematic and results. <span class="capion">Markers indicate the last converged equilibrium point achieved by each method.</span><br />
+           </div>
+           <p><a href="NLS/Files/12BarTruss.zip">12 Bar Truss files (zip format)</a></p>
+         </div>
+         </div>
+         <div class="TabbedPanelsContent">
+         <div class="examples_content">
+           <p>Deformation of the Lee Frame is characterized by large rigid body displacements and rotations resulting in instability. The behavior is highly nonlinear with two load limit points and snap-back behavior (i.e. displacement limit point).<br />
+             <br />
+             <br />
+           </p>
+           <div id="lee_wrapper">
+             <div id="lee_left"><img src="NLS/Media/lee_frame_schematic.png" width="287" height="300" alt="Lee Frame schematic" /></div>
+             <div id="lee_right"><a href="NLS/Media/frame_disp.avi"><a href="NLS/Media/frame_disp.avi"><img src="NLS/Media/lee_frame.png" width="391" height="300" alt="Lee Frame load vs. displacement curve" /></a>
+               <div class="capion">Markers indicate the last converged equilibrium point achieved by each method.<br />
+                 </div></div>
+           </div>
+    
+           <p><a href="NLS/Files/Lee%20Frame.zip">Lee Frame files (zip format)</a><br />
+           </p>
+</div>
+         </div>
+         </div>
+       </div>
+     </div>
+  
+  
+  <div class="DivHeading Heading box_level2"><a name="plotting" id="plotting"></a>Plotting results</div>
+  <div class="subsection">
+    <p>Output files from NLS++ were plotted with simple MATLAB codes, available <a href="NLS/Codes/Plot_Matlab.zip">here</a>.</p>
+	</div>
+    
+    <div class="DivHeading Heading box_level2"><a name="summary" id="summary"></a>Thank you</div>
+    <div class="subsection">
+      <p>Thank you for using NLS++!</p></div>
+    
+</div>
+<script type="text/javascript">
+<!--
+var TabbedPanels2 = new Spry.Widget.TabbedPanels("TabbedPanels2");
+var TabbedPanels3 = new Spry.Widget.TabbedPanels("TabbedPanels3");
+//-->
+</script>
+<!-- InstanceEndEditable --></div>
+  </div>
+  
+  <div id="footer"><a href="mailto:webmasterghp@gmail.com">Contact Webmaster: webmasterGHP@gmail.com</a></div>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-15530246-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+</body>
+<!-- InstanceEnd -->
+<!-- Mirrored from paulino.ce.gatech.edu/NLS_tutorial.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Mar 2021 13:17:33 GMT -->
+</html>
